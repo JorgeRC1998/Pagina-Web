@@ -1,0 +1,211 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="paginaMaestra.master.cs" Inherits="aplicacionWeb.paginaMaestra" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+Template Name: PlusBusiness
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>PlusBusiness</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href="layout/styles/layout.css" type="text/css" />
+    <script type="text/javascript" src="layout/scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script>
+    <script type="text/javascript" src="layout/scripts/jquery.jcarousel.pack.js"></script>
+    <script type="text/javascript" src="layout/scripts/jquery.jcarousel.setup.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <style type="text/css">
+        .auto-style2 {
+            position: relative;
+            min-height: 1px;
+            float: left;
+            width: 110%;
+            left: 0px;
+            top: 0px;
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-left: 120px;
+        }
+    </style>
+</head>
+<body id="top" style="height: 519px">
+    <form id="form1" runat="server">
+        <!-- ####################################################################################################### -->
+        <div class="wrapper col1">
+            <div id="header">
+                <div id="logo">
+                    <h1><a href="Pinicial.aspx">Aplicativo de vehículos</a></h1>
+                    <p>Desarrollado en ASP.NET</p>
+                </div>
+                <div id="topnav">
+                    <!--menu-->
+                </div>
+                <br class="clear" />
+            </div>
+        </div>
+
+        <!-- ####################################################################################################### -->
+
+        <!-- ####################################################################################################### -->
+
+        <p class="fl_right">
+            &nbsp;
+        </p>
+        <p class="fl_right">
+            &nbsp;
+        </p>
+        <p class="fl_right">
+        </p>
+        <p class="fl_right">
+            &nbsp;
+        </p>
+        <div class="auto-style2">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <h2>Información Del Vehículo escaneado</h2>
+            <br />
+            <asp:Label ID="Label2" runat="server" Text="Placa" Font-Bold="True" Font-Size="Large"></asp:Label>
+            <asp:Label ID="Label9" runat="server" Text="Label"></asp:Label>
+            <br />
+            <asp:Label ID="Label3" runat="server" Text="Color" Font-Bold="True" Font-Size="Large"></asp:Label>
+            <asp:Label ID="Label10" runat="server" Text="Label"></asp:Label>
+            <br />
+            <asp:Label ID="Label15" runat="server" Text="Marca" Font-Bold="True" Font-Size="Large"></asp:Label>
+            <asp:Label ID="Label16" runat="server" Text="Label"></asp:Label>
+            <br />
+            <asp:Label ID="Label4" runat="server" Text="Modelo" Font-Bold="True" Font-Size="Large"></asp:Label>
+            <asp:Label ID="Label11" runat="server" Text="Label"></asp:Label>
+            <br />
+            <asp:Label ID="Label6" runat="server" Text="Serial" Font-Bold="True" Font-Size="Large"></asp:Label>
+            <asp:Label ID="Label13" runat="server" Text="Label"></asp:Label>
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/images/1.png" />
+            <br />
+            <br />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Botón busqueda URL" class="btn btn-primary" />
+            <br />
+            <br />
+            <input onclick='responsiveVoice.speak(cadena(), "Spanish Latin American Female"); ' type='button' value='&#128266; Reproducir descripción' class="btn btn-success" />
+
+            <br />
+
+            <h2>Encuesta de satisfacción del vehiculo</h2>
+            <p>Por favor responda a las siguientes preguntas siendo 1 la calificaion mas baja y 5 la maxima, al finalizar pulse el boton para registrar su respuesta</p>
+
+            <p>
+                1) Comodidad ofrecida por el veiculo
+            </p>
+            <select id="c1" class="btn btn-primary dropdown-toggle" runat="server">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <p>
+                <br />
+                2) Consumo de combustible del vehiculo
+            </p>
+            <select id="c2" class="btn btn-primary dropdown-toggle" runat="server">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <p>
+                <br />
+                3) Desempeño del vehiculo en diferentes terrenos y situaciones
+            </p>
+            <select id="c3" class="btn btn-primary dropdown-toggle" runat="server">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+
+            <p>
+                <br />
+                4) Aspecto estético
+            </p>
+            <select id="c4" class="btn btn-primary dropdown-toggle" runat="server">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+
+            <p>
+                <br />
+                5) Calificacion general
+            </p>
+            <select id="c5" class="btn btn-primary dropdown-toggle" runat="server">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <br />
+            <br />
+
+            <asp:Button ID="Button2" runat="server" Text="Calificar" class="btn btn-primary" OnClick="Button2_Click" OnClientClick="serial()" />
+
+            <br />
+        </div>
+    </form>
+</body>
+<script type="text/javascript" src='https://code.responsivevoice.org/responsivevoice.js'></script>
+
+<script type="text/javascript">
+    function cadena() {
+        //$.ajax({
+        //    url: 'http://localhost:56025/Pinicial.aspx?serial=0002',
+        //    success: function (respuesta) {
+        var text1 = $('#<%=Label2.ClientID%>').html();
+        var text2 = $('#<%=Label3.ClientID%>').html();
+        var text3 = $('#<%=Label15.ClientID%>').html();
+        var text4 = $('#<%=Label4.ClientID%>').html();
+        var text6 = $('#<%=Label6.ClientID%>').html();
+
+        var text7 = $('#<%=Label9.ClientID%>').html();
+        var text8 = $('#<%=Label10.ClientID%>').html();
+        var text9 = $('#<%=Label16.ClientID%>').html();
+        var text10 = $('#<%=Label11.ClientID%>').html();
+        var text12 = $('#<%=Label13.ClientID%>').html();
+        if (text12 == "Label") {
+            cadena = "Descripcion de vehiculo no encontrada";
+            return cadena;
+        } else {
+            var cadena = ('La descripción del vehiculo es:' + text1 + "," + text7 + "," + text2 + "," + text8 + "," + text3 + "," + text9 + "," + text4 + "," + text10 + "," + text6 + "," + text12);
+            return cadena;
+        }
+        //}, error: function () {
+        //    console.log("Error");
+        //}
+    //});
+          
+        }
+</script>
+
+<script type="text/javascript">
+    function serial() {
+        var text12 = $('#<%=Label13.ClientID%>').html();
+        if (text12 == "Label") {
+            alert("Imposible registrar una encuesta sin un serial de vehiculo");
+        } else {
+            alert("Calificación registrada exitosamente!");
+        }
+    }
+</script>
+</html>
