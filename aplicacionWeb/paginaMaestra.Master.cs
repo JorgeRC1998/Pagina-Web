@@ -14,52 +14,28 @@ namespace aplicacionWeb
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            //string x = Request.QueryString["serial"];
-            //Vehiculito vehiculo = objGestion.consultarVehiculo(x);
-            //if (vehiculo != null)
-            //{
-            //    Label9.Text = vehiculo.placa;
-            //    Label10.Text = vehiculo.color;
-            //    Label16.Text = vehiculo.marca;
-            //    Label11.Text = vehiculo.modelo;
-            //    Label12.Text = vehiculo.QR;
-            //    Label13.Text = vehiculo.imagen;
-
-            //}
-            //else
-            //{
-
-            //}
-        }
-
-        
-       
-        protected void Button1_Click1(object sender, EventArgs e)
-        {
-            //Codigo de prueba para mostrar la descripcion al pulsar el boton, al realizar la integracion con el codigo qr
-            //Este codigo se carga al iniciar la pagina, en el metodo load de arriba
-            string serial = Request.QueryString["serial"];
-            if (serial == null)
+            string x = Request.QueryString["serial"];
+            Vehiculito vehiculo = objGestion.consultarVehiculo(x);
+            if (vehiculo != null)
             {
-                Console.WriteLine("Error");
+                Label9.Text = vehiculo.placa;
+                Label10.Text = vehiculo.color;
+                Label16.Text = vehiculo.marca;
+                Label11.Text = vehiculo.modelo;
+                Label13.Text = vehiculo.serial;
+
             }
             else
             {
-                Vehiculito vehiculo = objGestion.consultarVehiculo(serial);
-                if (vehiculo != null)
-                {
-                    Label9.Text = vehiculo.placa;
-                    Label10.Text = vehiculo.color;
-                    Label16.Text = vehiculo.marca;
-                    Label11.Text = vehiculo.modelo;
-                    Label13.Text = vehiculo.serial;
-                }
-                else
-                {
-
-                }
+                Label9.Text = "";
+                Label10.Text = "";
+                Label16.Text = "";
+                Label11.Text = "";
+                Label13.Text = "";
             }
         }
+
+        
 
         protected void Button2_Click(object sender, EventArgs e)
         {

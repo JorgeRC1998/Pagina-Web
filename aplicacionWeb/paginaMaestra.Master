@@ -1,6 +1,6 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="paginaMaestra.master.cs" Inherits="aplicacionWeb.paginaMaestra" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!--
 Template Name: PlusBusiness
 Author: <a href="http://www.os-templates.com/">OS Templates</a>
@@ -35,13 +35,13 @@ Licence URI: http://www.os-templates.com/template-terms
         }
     </style>
 </head>
-<body id="top" style="height: 519px">
+<body id="top" style="height: 519px" onload="imagenAElegir()">
     <form id="form1" runat="server">
         <!-- ####################################################################################################### -->
         <div class="wrapper col1">
             <div id="header">
                 <div id="logo">
-                    <h1><a href="Pinicial.aspx">Aplicativo de veh韈ulos</a></h1>
+                    <h1><a href="Pinicial.aspx">Aplicativo de veh铆culos</a></h1>
                     <p>Desarrollado en ASP.NET</p>
                 </div>
                 <div id="topnav">
@@ -69,7 +69,7 @@ Licence URI: http://www.os-templates.com/template-terms
         <div class="auto-style2">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-            <h2>Informaci髇 Del Veh韈ulo escaneado</h2>
+            <h2>Informaci贸n Del Veh铆culo escaneado</h2>
             <br />
             <asp:Label ID="Label2" runat="server" Text="Placa" Font-Bold="True" Font-Size="Large"></asp:Label>
             <asp:Label ID="Label9" runat="server" Text="Label"></asp:Label>
@@ -85,17 +85,17 @@ Licence URI: http://www.os-templates.com/template-terms
             <br />
             <asp:Label ID="Label6" runat="server" Text="Serial" Font-Bold="True" Font-Size="Large"></asp:Label>
             <asp:Label ID="Label13" runat="server" Text="Label"></asp:Label>
-            <asp:Image ID="Image1" runat="server" ImageUrl="~/images/1.png" />
+            <br /><br />
+         <!--   <asp:Image ID="Image1" runat="server" ImageUrl="~/images/1.png" height="300" width="400"/>  -->
+            <br />
+            <div id="img"></div>
             <br />
             <br />
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Bot髇 busqueda URL" class="btn btn-primary" />
-            <br />
-            <br />
-            <input onclick='responsiveVoice.speak(cadena(), "Spanish Latin American Female"); ' type='button' value='&#128266; Reproducir descripci髇' class="btn btn-success" />
+            <input onclick='responsiveVoice.speak(cadena(), "Spanish Latin American Female"); ' type='button' value='&#128266; Reproducir descripci贸n' class="btn btn-success" />
 
             <br />
 
-            <h2>Encuesta de satisfacci髇 del vehiculo</h2>
+            <h2>Encuesta de satisfacci贸n del vehiculo</h2>
             <p>Por favor responda a las siguientes preguntas siendo 1 la calificaion mas baja y 5 la maxima, al finalizar pulse el boton para registrar su respuesta</p>
 
             <p>
@@ -121,7 +121,7 @@ Licence URI: http://www.os-templates.com/template-terms
             </select>
             <p>
                 <br />
-                3) Desempe駉 del vehiculo en diferentes terrenos y situaciones
+                3) Desempe帽o del vehiculo en diferentes terrenos y situaciones
             </p>
             <select id="c3" class="btn btn-primary dropdown-toggle" runat="server">
                 <option value="1">1</option>
@@ -134,7 +134,7 @@ Licence URI: http://www.os-templates.com/template-terms
 
             <p>
                 <br />
-                4) Aspecto est閠ico
+                4) Aspecto est茅tico
             </p>
             <select id="c4" class="btn btn-primary dropdown-toggle" runat="server">
                 <option value="1">1</option>
@@ -187,7 +187,7 @@ Licence URI: http://www.os-templates.com/template-terms
             cadena = "Descripcion de vehiculo no encontrada";
             return cadena;
         } else {
-            var cadena = ('La descripci髇 del vehiculo es:' + text1 + "," + text7 + "," + text2 + "," + text8 + "," + text3 + "," + text9 + "," + text4 + "," + text10 + "," + text6 + "," + text12);
+            var cadena = ('La descripci贸n del vehiculo es:' + text1 + "," + text7 + "," + text2 + "," + text8 + "," + text3 + "," + text9 + "," + text4 + "," + text10 + "," + text6 + "," + text12);
             return cadena;
         }
         //}, error: function () {
@@ -204,8 +204,418 @@ Licence URI: http://www.os-templates.com/template-terms
         if (text12 == "Label") {
             alert("Imposible registrar una encuesta sin un serial de vehiculo");
         } else {
-            alert("Calificaci髇 registrada exitosamente!");
+            alert("Calificaci贸n registrada exitosamente!");
         }
     }
 </script>
+
+    <script type="text/javascript">
+        function imagenAElegir() {
+            var serial = $('#<%=Label13.ClientID%>').html();
+            var imagen;
+            var cadena;
+            switch (serial) {
+                case "0001": imagen = '1.png'; break;
+	            case "0002": imagen = '2.png'; break;
+	            case "0003": imagen = '3.png'; break;
+	            case "0004": imagen = '4.png'; break;
+                case "0005": imagen = '5.png'; break;
+                case "0006": imagen = '6.png'; break;
+                case "0007": imagen = '7.png'; break;
+            };           
+             $('#img').append('<img src="images/vehiculos/'+imagen+'" height="300" width="400"/>');
+            return cadena;
+        }
+    </script>
+</html>--%>
+
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>LinceCars</title>
+	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<!-- jQuery (necessary JavaScript plugins) -->
+	<!-- Custom Theme files -->
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
+
+	<!-- Custom Theme files -->
+	<!--//theme-style-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Auto cars Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+
+
+</head>
+
+<body id="top" style="height: 519px" onload="imagenAElegir()">
+   <%-- <form runat="server">--%>
+     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+          </asp:ContentPlaceHolder>
+	<!-- banner -->
+	<div class="banner">
+		<div class="container">
+			<div class="header">
+				<div class="logo">
+					<h1><a><img src="images/car.png" alt=""/>LINCE <span>CARS</span></a></h1>
+				</div>
+				<div class="top_details">
+					<p><span></span> 310 603 87 67</p>
+					<div class="search">
+						<form>
+						</form>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<nav class="navbar navbar-default">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					  </button>
+				</div>
+			   <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">					
+				</div>
+			</nav>
+			<div id="top" class="callbacks_container">
+				<ul class="rslides" id="slider3">
+					<li>
+						<div class="banner-info">
+							<h3>Magnifica exposicion de vehiculos de lujo.</h3>
+							<p>Venga, disfrute y antojese de nuestra exposicion.</p>
+						</div>
+					</li>
+					<li>
+						<div class="banner-info">
+							<h3>Aprenda algunas caracteristicas de nuestros vehiculos.</h3>
+							<p>Use su lector de Qr's en los codigos Qr ubicados en los vehiculos!</p>
+						</div>
+					</li>
+					<li>
+						<div class="banner-info">
+							<h3>Compartanos su opinion ya que no es de gran ayuda.</h3>
+							<p>Califique nuestros vehiculos por medio de las 5 preguntas dispuestas.</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!---->
+	<div class="welcome">
+		<div class="container">
+			<div class="welcome_sec">
+				<div class="col-md-6 welcome_info">
+					<h3>Bienvenido</h3>
+			
+					<h4>Informacion Del Vehiculo escaneado.</h4>
+    <asp:Label ID="Label2" runat="server" Text="Placa"  Font-Size="Large" Font-Bold="true"></asp:Label>  
+                    <br />
+    <asp:Label ID="Label9" runat="server" Text="Label" ></asp:Label>
+    <br />
+    <asp:Label ID="Label3" runat="server" Text="Color"  Font-Size="Large" Font-Bold="true"></asp:Label>
+                    <br />
+    <asp:Label ID="Label10" runat="server" Text="Label"></asp:Label>
+    <br />
+    <asp:Label ID="Label15" runat="server" Text="Marca"  Font-Size="Large" Font-Bold="true"></asp:Label>
+                    <br />
+    <asp:Label ID="Label16" runat="server" Text="Label"></asp:Label>
+    <br />
+    <asp:Label ID="Label4" runat="server" Text="Modelo"  Font-Size="Large" Font-Bold="true"></asp:Label>
+                    <br />
+    <asp:Label ID="Label11" runat="server" Text="Label"></asp:Label>
+   <br />
+    <asp:Label ID="Label6" runat="server" Text="Serial"  Font-Size="Large" Font-Bold="true"></asp:Label>
+                    <br />
+    <asp:Label ID="Label13" runat="server" Text="Label" ></asp:Label> 
+					<a class="hvr-bounce-to-bottom" onclick='responsiveVoice.speak(cadena() , "Spanish Latin American Female"); ' >Leer Descripcion</a>
+                  <form runat="server">                 
+				</div>
+
+				<div class="col-md-6 welcome_pic">
+					
+					<div id="img"></div>
+					<h3>Vehiculo.</h3>					
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!---->
+
+	<div class="slider btm_sld">
+		<div class="container">
+			<div class="callbacks2_container">
+				<ul class="rslides" id="slider2">
+					<li>
+						<p>Tu opinion es muy importante para nosotros!</p>
+					</li>
+					<li>
+						<p>Invierte 1 minuto de tu tiempo para llenar esta encuesta.</p>
+					</li>
+					<li>
+						<p>LinceCars, para servirte</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!---->
+
+	<!---->
+	<div class="feature_sec">
+		<div class="container">
+			<div class="feature_head">
+				<h3>Encuesta de satisfaccion de vehiculo</h3>
+				<span></span>
+			</div>
+            <br />
+	        <p>Por favor responda a las siguientes preguntas siendo 1 la calificaion mas baja y 5 la maxima, al finalizar pulse el boton para registrar su respuesta</p>
+            <br />
+    <p>
+        1) Comodidad ofrecida por el veiculo
+    </p>
+    <select id="c1" class="btn btn-primary dropdown-toggle" runat="server">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+        </select>
+    <p>
+        <br />
+        2) Consumo de combustible del vehiculo
+    </p>
+    <select id="c2" class="btn btn-primary dropdown-toggle" runat="server">
+            <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+        </select>
+    <p>
+        <br />
+        3) Desempenio del vehiculo en diferentes terrenos y situaciones
+    </p>
+    <select id="c3" class="btn btn-primary dropdown-toggle" runat="server">
+       <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+        </select>
+
+
+    <p>
+        <br />
+        4) Aspecto estetico
+    </p>
+    <select id="c4" class="btn btn-primary dropdown-toggle" runat="server">
+             <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+        </select>
+
+
+    <p>
+        <br />
+        5) Calificacion general
+    </p>
+    <select id="c5" class="btn btn-primary dropdown-toggle" runat="server">
+             <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+        </select>
+    <br />
+   <br />
+   <asp:Button ID="Button2" runat="server" Text="Calificar" class="btn btn-primary" OnClick="Button2_Click" OnClientClick=serial() />
+          </form>
+    <br />
+   
+   
+			
+			<div class="clearfix"></div>
+
+		</div>
+	</div>
+	<!---->
+	<div class="footer2">
+		<div class="container">
+			<div class="ftr2-grids">
+				<div class="col-md-4 ftr2-grid1">
+					<h3>About Us</h3>
+					<ul>
+						<li><a>About</a></li>
+						<li><a>Services</a></li>
+						<li><a>Blog</a></li>
+						<li><a>Gallery</a></li>
+						<li><a>Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="col-md-4 ftr6-grid3">
+					<h3>Get in Touch</h3>
+					<p>you have the following social networks for you.</p>
+					<form>
+					</form>
+					<div class="social">
+						<ul>
+							<li><a><i class="facebook"></i></a></li>
+							<li><a><i class="twitter"></i></a></li>
+							<li><a><i class="dribble"></i></a></li>
+							<li><a><i class="google"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>	
+	</div>
+	<!---->
+
+
+	<script src="js/jquery.min.js"></script>
+
+	<script src="js/responsiveslides.min.js"></script>
+
+	<script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+			// Slideshow 4
+			$("#slider3,#slider2").responsiveSlides({
+				auto: true,
+				pager: true,
+				nav: false,
+				speed: 500,
+				namespace: "callbacks",
+				before: function () {
+					$('.events').append("<li>before event fired.</li>");
+				},
+				after: function () {
+					$('.events').append("<li>after event fired.</li>");
+				}
+			});
+
+		});
+	</script>
+	<script>
+		$(function () {
+			$("#slider2").responsiveSlides({
+				auto: true,
+				speed: 500,
+				namespace: "callbacks2",
+				pager: true,
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		$(window).load(function () {
+			$("#flexiselDemo3").flexisel({
+				visibleItems: 4,
+				animationSpeed: 1000,
+				autoPlay: true,
+				autoPlaySpeed: 3000,
+				pauseOnHover: true,
+				enableResponsiveBreakpoints: true,
+				responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 2
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 3
+					}
+				}
+			});
+
+		});
+	</script>
+	<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+	<script src="js/bootstrap.js"></script>
+        <%--</form>--%>
+</body>
+ <script type="text/javascript" src='https://code.responsivevoice.org/responsivevoice.js'></script>
+
+    <script type="text/javascript">
+        function cadena() {
+            var text1 = $('#<%=Label2.ClientID%>').html();
+            var text2 = $('#<%=Label3.ClientID%>').html();
+            var text3 = $('#<%=Label15.ClientID%>').html();
+            var text4 = $('#<%=Label4.ClientID%>').html();
+            var text6 = $('#<%=Label6.ClientID%>').html();
+
+            var text7 = $('#<%=Label9.ClientID%>').html();
+            var text8 = $('#<%=Label10.ClientID%>').html();
+            var text9 = $('#<%=Label16.ClientID%>').html();
+            var text10 = $('#<%=Label11.ClientID%>').html();
+            var text12 = $('#<%=Label13.ClientID%>').html();
+            if (text12 == "") {
+                cadena = "El serial el cual desea consultar no existe en nuestros registros";
+                return cadena;
+            } else {
+                var cadena = ('La descripcion del vehiculo es:' + text1 + "," + text7 + "," + text2 + "," + text8 + "," + text3 + "," + text9 + "," + text4 + "," + text10 + "," + text6 + "," + text12);
+                return cadena;
+            }
+          
+        }
+    </script>
+
+    <script type="text/javascript">
+        function serial() {
+               var text12 = $('#<%=Label13.ClientID%>').html();
+            if (text12 == "Label") {
+                alert("Imposible registrar una encuesta sin un serial de vehiculo");
+            } else {
+                alert("Calificacion registrada exitosamente!");
+            }
+        }
+    </script>
+
+     <script type="text/javascript">
+        function imagenAElegir() {
+            var serial = $('#<%=Label13.ClientID%>').html();
+            var imagen;
+            var cadena;
+            switch (serial) {
+                case "0001": imagen = '1.png'; break;
+	            case "0002": imagen = '2.png'; break;
+	            case "0003": imagen = '3.png'; break;
+	            case "0004": imagen = '4.png'; break;
+                case "0005": imagen = '5.png'; break;
+                case "0006": imagen = '6.png'; break;
+                case "0007": imagen = '7.png'; break;
+            };
+            cadena = '~/images/' + imagen;
+             $('#img').append('<img src="images/vehiculos/'+imagen+'" height="300" width="400"/>');
+            return cadena;
+        }
+    </script>
+
 </html>

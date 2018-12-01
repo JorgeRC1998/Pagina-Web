@@ -56,3 +56,4 @@ C:\Users\jorge\source\repos\aplicacionWeb\aplicacionWeb\obj\Release\aplicacionWe
 C:\Users\jorge\source\repos\aplicacionWeb\aplicacionWeb\obj\Release\aplicacionWeb.csproj.CopyComplete
 C:\Users\jorge\source\repos\aplicacionWeb\aplicacionWeb\obj\Release\aplicacionWeb.dll
 C:\Users\jorge\source\repos\aplicacionWeb\aplicacionWeb\obj\Release\aplicacionWeb.pdb
+C:\Users\jorge\source\repos\aplicacionWeb\aplicacionWeb\obj\Release\aplicacionWeb.csprojAssemblyReference.cache
